@@ -5,6 +5,7 @@ class SearchBar extends React.Component {
 
     onInputChange = (event) => {
         this.setState({ term: event.target.value })
+        console.log(this.state.term)
     }
 
     onFormSubmit = (event) => {
@@ -15,8 +16,8 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <div className='ui segment'>
-                <div className='ui form' onSubmit={this.onFormSubmit}>
+            <div className='ui segment' >
+                <form className='ui form' onSubmit={this.onFormSubmit}>
                     <div className='field'>
                         <label>Video Search</label>
                         <input
@@ -25,7 +26,7 @@ class SearchBar extends React.Component {
                             onChange={this.onInputChange}
                         />
                     </div>
-                </div>
+                </form>
             </div>
         )
     }
